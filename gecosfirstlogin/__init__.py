@@ -36,7 +36,7 @@ def chef_is_configured():
     import os
     # Don't execute this assistant if chef its not configured
     
-    return os.path.exists('/etc/chef/client.rb')
+    return (os.path.exists('/etc/chef/client.rb') and (os.path.getsize('/etc/chef/client.rb') > 0L))
 
 
 def dbusservice():
@@ -56,6 +56,9 @@ def main():
     if not chef_is_configured():
         return
 
+    import gi
+    gi.require_version('Gtk', '3.0')
+    gi.require_version('WebKit', '3.0')
     from gi.repository import Gtk
     from gecosfirstlogin_lib.FirstartEntry import FirstartEntry
     from assistant.FirstartWindow import FirstartWindow

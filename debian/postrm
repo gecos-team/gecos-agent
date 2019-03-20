@@ -1,9 +1,12 @@
 #!/bin/sh
 # Delete permissions for all users to run a chef-client
 
-PATTERN='/usr/bin/gecos-chef-client-wrapper'
+PATTERN='GECOSCMD'
 FILE=/etc/sudoers
 TMPFILE=/etc/sudoers.new
 
 grep -v $PATTERN $FILE > $TMPFILE
 mv $TMPFILE $FILE
+
+systemctl disable gecos-snitch-service.service
+systemctl disable gecos-first-login.service

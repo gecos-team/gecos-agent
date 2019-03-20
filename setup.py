@@ -3,8 +3,8 @@
 from distutils.core import setup
 import glob
 
-setup(name='gecos-agent',
-      version='1.2',
+setup(name='gecosws-agent',
+      version='1.5',
       description='GECOS Agent for Workstations',
       author='Alfonso de Cala',
       author_email='alfonso.cala@juntadeandalucia.es',
@@ -16,6 +16,7 @@ setup(name='gecos-agent',
                   ('/usr/share/gecos-first-login/media',glob.glob('data/media/*')),
                   ('/etc/dbus-1/system.d/',glob.glob('etc/dbus-1/system.d/*.conf')),
                   ('/etc/init/',glob.glob('etc/init/*.conf')),
+                  ('/lib/systemd/system/',glob.glob('lib/systemd/system/*.service')),
                   ('/etc/xdg/autostart/',glob.glob('etc/xdg/autostart/*.desktop'))]
      )
 
