@@ -1,0 +1,29 @@
+# YAML 1.1
+# Fichero de configuración de paquetes de personalización de GECOS
+
+
+# Nombre del paquete (minusculas-separado-con-guiones)
+name: gecos-meta
+
+# Autor 
+author: Alfonso de Cala <acala@services.gruposolutia.com>
+
+#Priority
+priority: optional
+
+# Section
+section: oldlibs
+
+# Descripcion corta
+shortdesc: "GECOS Agent old package."
+
+# Descipcion larga, las lineas han de estar separadas por "\n "
+longdesc: "GECOS Agent virtual package pointing at the new gecosws-agent package."
+
+
+# Version del paquete
+version: 1.0
+
+# Cambios en esta version
+changes:
+    - Created for GECOS v4.
